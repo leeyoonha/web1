@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>index</title>
+  <link rel="stylesheet" href="./home_css/index.css">
+</head>
+<body>
+  <div id="container">
+  <header>
+     <h1>Web reference</h1>
+  </header>
+  <nav>
+  <table id="menu">
+    <tr>
+    <td><a href="./html_wpage/html_main.html" target="_blank">HTML</a></td>
+    <td>CSS</td>
+    <td>JAVASCRIPT</td>
+    <td>jQUERY</td>
+    <td><a href="./php_wpage/php_main.html" target="_blank">PHP</a></td>
+    <td>MYSQL</td>
+    <td><a href="./canvas_wpage/canvas_main.html" target="_blank">CANVAS</a></td>
+    </tr>
+    </table>
+    </nav>
+
+    <selection id="selection">
+      <article>
+        <h4>HTML : </h4>
+        <p><a href="./html_wpage/html_main.html" target="_blank">Hyper Text Markup Language</a></p>
+      </article>
+      <article>
+        <h4>CSS</h4>
+        <p>Cascading Style Sheets </p>
+      </article>
+      <article>
+        <h4>JAVASCRIPT</h4>
+        <p>객체 기반의 스크립트<br/> 프로그래밍 언어</p>
+      </article>
+      <article>
+        <h4>jQuery</h4>
+        <p>Javascript Library</p>
+      </article>
+      <article>
+        <h4>PHP</h4>
+        <p><a href="./php_wpage/php_main.html" target="_blank">Hypertext Preprocessor</a></p>
+      </article>
+      <article>
+        <h4>MYSQL</h4>
+        <p>세계에서 가장 널리<br/> 사용되는 오픈 소스<br/> 데이터베이스 소프트웨어</p>
+      </article>
+      <article>
+        <h4>CANVAS</h4>
+        <p><a href="./canvas_wpage/canvas_main.html" target="_blank">Canvas Tutorials</a></p>
+      </article>
+    </selection>
+    <footer>
+      <ul>
+        <b>-관련 웹사이트-</b>
+        <li><a href="https://www.w3schools.com/" target="blank">www.w3schools</a></li>
+        <li><a href="https://jsfiddle.net/" target="blank">jsfiddle</a></li>
+        <li><a href="https://phpschool.com/" target="blank">phpschool</a></li>
+        <li><a href="https://github.com/" target="blank">github</a></li>
+        <li><a href="http://www.digitalmediaminute.com/reference/entity/index.php" target="blank">entity</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="blank">MDN Network</a></li>
+      </ul>
+      <ul>
+        <b>-웹브라우저 관련사이트-</b>
+        <li><a href="https://www.google.com/chrome/browser/desktop/index.html" target="blank">Google Chrome</a></li>
+        <li><a href="https://www.mozilla.org/ko/" target="blank">Mozilla Firefox </a></li>
+        <li><a href="http://www.opera.com/ko/computer" target="blank">Opera</a></li>
+        <li><a href="https://www.apple.com/kr/safari/" target="blank">apple safari</a></li>
+        <li><a href="https://support.microsoft.com/ko-kr/help/17621/internet-explorer-downloads" target="blank">MS InternetExplorer</a></li>
+      </ul>
+    </footer>
+    </div>   <!--end container -->
+    <div id="time"></div>
+    <script>
+    var time=document.getElementById("time");
+    function date(){
+     var date=new Date;
+     time.innerHTML=date.toLocaleString();
+    }
+    var myTime=setInterval(date,1000);
+    </script>
+</body>
+</html>

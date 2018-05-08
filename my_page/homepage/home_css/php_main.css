@@ -1,0 +1,87 @@
+body{
+font-family:"times new roman","Dotum","돋움","helvetica","verdana","consolas";
+margin:auto;
+background:#f2f4f7;
+}
+#container{
+  width:999px;
+  background:white;height:790px;
+}
+header{
+  margin-top:0px;
+  margin:auto;
+  margin-bottom:1px;
+  width:999px;
+  height:70px;
+  background:#dc143c;
+
+}
+header h1{
+  padding-left:10px;
+  padding-top:20px;
+  margin-top:0px;
+  color:white;
+  text-shadow:1px 1px 1px black;
+}
+nav{
+  width:999px;
+  height:30px;
+  /*  background:#06568e   */
+  background:#cd5c5c;
+  color:white;
+  text-shadow:1px 1px 1px black;
+  margin-bottom:2px;
+}
+#menu{
+  margin:auto;
+}
+#menu td{
+  padding-left:35px;
+  padding-right:35px;
+}
+#menu td:hover{
+  color:#ffd700;
+  cursor:pointer;
+  text-decoration:underline;
+}
+
+.section{
+  font-family: "verdana" ;
+  width:300px;
+  background:#dddccc;
+  margin-top:0px;
+  font-size:12px;
+  color:black;
+  padding-left:5px;
+  height:auto;
+}
+
+#accordion h5{
+  font-family: "verdana" ;
+  font-weight:bold;
+  width:305px;
+  background:#dc143c;
+  box-shadow:1px 1px 3px  inset white;
+  margin-top:0px;
+  margin-bottom:1px;
+  cursor:pointer;
+  color:white;
+}
+
+a{color:black;}
+a:hover{
+  color:tomato;
+  text-decoration:underline;
+}
+.ttble{
+    border-collapse:collapse;
+}
+.ttble th{font-size:10px; border:1px solid black;}
+.ttble td{
+  padding:0px;
+  font-size:10px;
+  border:1px solid black;
+}
+.contents{
+  float:left;
+}

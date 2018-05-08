@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CANVAS tutorials</title>
+  <link rel="stylesheet" href="../home_css/canvas_main.css">
+</head>
+<body>
+  <div id="container">
+    <header>
+       <h1>CANVAS reference</h1>
+    </header>
+    <nav>
+    <table id="menu">
+      <tr>
+      <td>HTML</td>
+      <td>CSS</td>
+      <td>JAVASCRIPT</td>
+      <td>jQUERY</td>
+      <td>PHP</td>
+      <td>MYSQL</td>
+      <td>CANVAS</td>
+      </tr>
+      </table>
+      </nav>
+    <div id="contents1">
+    <div class="section">
+      <h3>HTML5 CANVAS ELEMENT</h3><hr>
+       <b>Html5 canvas element</b>
+         <p>&lt;canvas id="myCanvas" width="500" height="300&gt;</p>
+       <b>Html5 canvas element with fallback content</b>
+         <p>&lt;canvas id="myCanvas" width="500" height="300"&gt;<br/>
+            &nbsp;&nbsp;your browser doesn't support canvas!<br/>
+            &lt;/canvas&gt;
+         </p>
+       <b>2d context</b>
+         <p>var context = canvas.getContext('2d');</p>
+       <b>Webgl context (3d)</b>
+         <p>var context = canvas.getContext('webgl');</p>
+    </div>
+    <div class="section">
+      <h3>COLOR FORMATS</h3><hr>
+       <b>String</b>
+       <p>context.fillStyle = 'red';</p>
+       <b>Hex Long</b>
+       <p>context.fillStyle = '#ff0000';</p>
+       <b>Hex Short</b>
+       <p>context.fillStyle = '#f00';</p>
+       <b>RGB</b>
+       <p>context.fillStyle = 'rgb(255,0,0)';</p>
+       <b>RGBA</b>
+       <p>context.fillStyle = 'rgba(255,0,0,1)';</p>
+    </div>
+    <div class="section">
+      <h3>IMAGES</h3><hr>
+       <b>Draw Image with default size</b>
+       <p>var imageObj = new Image();<br/>
+          imageObj.onload = function() {<br/>
+            context.drawImage(imageObj, x, y);<br/>
+          };<br/>
+          imageObj.src = 'path/to/my/image.jpg';
+        </p>
+       <b>Draw image and set size</b>
+       <p>var imageObj = new Image();  <br/>
+          imageObj.onload = function() {  <br/>
+            context.drawImage(imageObj, x, y, width, height);  <br/>
+          };  <br/>
+          imageObj.src = 'path/to/my/image.jpg';  <br/>
+       </p>
+       <b>Crop image</b>
+       <p>var imageObj = new Image();  <br/>
+          imageObj.onload = function() {  <br/>
+            context.drawImage(imageObj, sx, sy, sw, sh, dx, dy, dw, dh);  <br/>
+          };  <br/>
+          imageObj.src = 'path/to/my/image.jpg';
+        </p>
+    </div>
+    <div class="section">
+      <h3>STATE STACK</h3><hr>
+       <b>Push State onto Stack</b>
+       <p>context.save();</p>
+       <b>Pop State off of Stack</b>
+       <p>context.restore();</p>
+    </div>
+    <div class="section">
+      <h3>CLIPPING</h3><hr>
+       <b>Clip</b>
+       <p>// draw path here <br/>
+          context.clip();
+        </p>
+    </div>
+    <div class="section">
+      <h3>DATA URLS</h3><hr>
+       <b>Get Data URL</b>
+       <p>var dataURL = canvas.toDataURL();</p>
+       <b>Render Canvas with Data URL</b>
+       <p>var imageObj = new Image();  <br/>
+          imageObj.onload = function() {  <br/>
+            context.drawImage(imageObj, 0, 0);  <br/>
+          };  <br/>  <br/>
+
+          imageObj.src = dataURL;
+       </p>
+    </div>
+    </div>      <!--   end contents1   -->
+    <div id="contents2">
+    <div class="section">
+      <h3>SHAPES</h3><hr>
+       <b>Draw rectangle</b>
+       <p>context.rect(x, y, width, height);  <br/>
+          context.fill();  <br/>
+          context.stroke();
+        </p>
+       <b>Fill rectangle shorthand</b>
+       <p>context.fillRect(x, y, width, height);</p>
+       <b>Stroke rectangle shorthand</b>
+       <p>context.strokeRect(x, y, width, height);</p>
+       <b>Draw circle</b>
+       <p>context.arc(x, y, radius, 0, Math.PI * 2);  <br/>
+          context.fill();  <br/>
+          context.stroke();
+       </p>
+    </div>
+    <div class="section">
+      <h3>PATHS</h3><hr>
+       <b>Begin Path</b>
+       <p>context.beginPath();</p>
+       <b>Line</b>
+       <p>context.lineTo(x, y);</p>
+       <b>Arc</b>
+       <p>context.arc(x, y, radius, startAngle, endAngle,   <br/>
+          counterClockwise);
+       </p>
+       <b>Quadratic curve</b>
+       <p>context.quadraticCurveTo(cx, cy, x, y);</p>
+       <b>Bezier curve</b>
+       <p>context.bezierCurveTo(cx1, cy1, cx2, cy2, x, y);</p>
+       <b>Close Path</b>
+       <p>context.closePath();</p>
+    </div>
+    <div class="section">
+      <h3>TEXT</h3><hr>
+       <b>Fill Text</b>
+       <p>context.font = '40px Arial';  <br/>
+          context.fillStyle = 'red';  <br/>
+          context.fillText('Hello World!', x, y);
+       </p>
+       <b>Stroke Text</b>
+       <p>context.font = '40pt Arial';  <br/>
+          context.strokeStyle = 'red';  <br/>
+          context.strokeText('Hello World!', x, y);
+       </p>
+       <b>Bold Text</b>
+       <p>context.font = 'bold 40px Arial';</p>
+       <b>Italic Text</b>
+       <p>context.font = 'italic 40px Arial';</p>
+       <b>Text Align</b>
+       <p>context.textAlign = 'start|end|left|center|right';</p>
+       <b>Text Baseline</b>
+       <p>context.textBaseline =  <br/>
+          'top|hanging|middle|alphabetic|ideographic  <br/>
+          |bottom';
+       </p>
+       <b>Get Text Width</b>
+       <p>var width = context.measureText('Hello  <br/>
+          world').width;
+       </p>
+    </div>
+    <div class="section">
+      <h3>IMAGE DATA</h3><hr>
+       <b>Get Image Data</b>
+       <p>var imageData = context.getImageData(x, y, width, <br/>
+          height);  <br/>
+          var data = imageData.data;
+       </p>
+       <b>Loop Through Image Pixels</b>
+       <p>var imageData = context.getImageData(x, y, width,
+         height);  <br/>
+         var data = imageData.data;  <br/>
+         var len = data.length;  <br/>
+         var i, red, green, blue, alpha;  <br/>
+
+         for(i = 0; i < len; i += 4) {  <br/>
+         red = data[i];  <br/>
+         green = data[i + 1];  <br/>
+         blue = data[i + 2];  <br/>
+         alpha = data[i + 3];  <br/>
+        }
+      </p>
+       <b>Loop Through Image Pixels With Coordinates</b>
+       <p>
+         var imageData = context.getImageData(x, y, width, height);  <br/>
+         var data = imageData.data;  <br/>
+         var x, y, red, green, blue, alpha;  <br/>  <br/>
+
+         for(y = 0; y < imageHeight; y++) {  <br/>
+           for(x = 0; x < imageWidth; x++) {  <br/>
+             red = data[((imageWidth * y) + x) * 4];  <br/>
+             green = data[((imageWidth * y) + x) * 4 + 1];  <br/>
+             blue = data[((imageWidth * y) + x) * 4 + 2];  <br/>
+             alpha = data[((imageWidth * y) + x) * 4 + 3];  <br/>
+           }  <br/>
+         }
+      </p>
+      <b>Set Image Data</b>
+      <p>context.putImageData(imageData, x, y);</p>
+    </div>
+    </div>    <!--   end contents2  -->
+    <div id="contents3">
+      <div class="section">
+        <h3>STYLES</h3><hr>
+         <b>Fill</b>
+         <p>context.fillStyle = 'red';   <br/>
+            context.fill();
+         </p>
+         <b>Stroke</b>
+         <p>context.strokeStyle = 'red';   <br/>
+            context.stroke();
+         </p>
+         <b>Linear gradient</b>
+         <p>
+           var grd = context.createLinearGradient(x1, y1, x2, y2);  <br/>
+           grd.addColorStop(0, 'red');     <br/>
+           grd.addColorStop(1, 'blue');  <br/>
+           context.fillStyle = grd;  <br/>
+           context.fill();
+         </p>
+         <b>Radial gradient</b>
+         <p>
+           var grd = context.createRadialGradient(x1, y1, radius1, x2, y2, radius2);  <br/>
+           grd.addColorStop(0, 'red');  <br/>
+           grd.addColorStop(1, 'blue');  <br/>
+           context.fillStyle = grd;  <br/>
+           context.fill();
+         </p>
+         <b>Pattern</b>
+         <p>
+            var imageObj = new Image();  <br/>
+            imageObj.onload = function() {  <br/>
+              var pattern = context.createPattern(imageObj, 'repeat');  <br/>
+              context.fillStyle = pattern;  <br/>
+              context.fill();  <br/>
+            };  <br/>
+            imageObj.src = 'path/to/my/image.jpg';
+         </p>
+         <b>Line Join</b>
+         <p>context.lineJoin = 'miter|round|bevel';</p>
+         <b>Line Cap</b>
+         <p>context.lineCap = 'butt|round|square';</p>
+         <b>Shadow</b>
+         <p>
+            context.shadowColor = 'black';  <br/>
+            context.shadowBlur = 20;  <br/>
+            context.shadowOffsetX = 10;  <br/>
+            context.shadowOffsetY = 10;
+         </p>
+         <b>Alpha (Opacity)</b>
+         <p>
+           context.globalAlpha = 0.5; // between 0 and 1
+         </p>
+       </div>
+      <div class="section">
+      <h3>TRANSFORMS</h3>
+      <b>Translate</b>
+      <p>context.translate(x, y);</p>
+      <b>Scale</b>
+      <p>context.scale(x, y);</p>
+      <b>Rotate</b>
+      <p>context.rotate(radians);</p>
+      <b>Flip Horizontally</b>
+      <p>context.scale(-1, 1);</p>
+      <b>Flip Vertically</b>
+      <p>context.scale(1, -1);</p>
+      <b>Custom Transform</b>
+      <p>context.transform(a, b, c, d ,e, f);</p>
+      <b>Set Transform</b>
+      <p>context.setTransform(a, b, c, d ,e, f);</p>
+      <b>Shear</b>
+      <p>context.transform(1, sy, sx, 1, 0, 0);</p>
+      <b>Reset</b>
+      <p>context.setTransform(1, 0, 0, 1, 0, 0);</p>
+      </div>
+      <div class="section">
+      <h3>COMPOSITES</h3>
+      <b>Composite Operations</b>
+      <p>context.globalCompositeOperation = 'source-  <br/>
+         atop|source-in|source-out|source-over|destination-  <br/>
+         atop|destination-in|destination-out|destination-  <br/>
+         over|lighter|xor|copy';
+      </p>
+      </div>
+
+    </div>    <!--   end contents3  -->
+<!----------------------------------->
+  </div>   <!--   end container  -->
+  <aside>
+    <strong>관련링크</strong><br/>
+    <ul>
+    <li><a href="https://www.html5canvastutorials.com/">-html5canvastutorials-</a></li>
+    <li><a href="http://cheatsheetworld.com/programming/html5-canvas-cheat-sheet/">-cheat sheet world-</a></li>
+    <li><a href="https://www.w3.org/TR/2dcontext/">-www.w3.org-</a></li>
+    </ul>
+  </aside>
+</body>
+</html>
